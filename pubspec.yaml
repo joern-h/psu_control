@@ -1,0 +1,12 @@
+name: psu_control_workspace
+description: Monorepo for the Owon SPE6103 power supply control suite.
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+workspace:
+  - packages/psu_protocol
+  - packages/psu_service
+  - packages/psu_cli
+  - apps/psu_ui

@@ -1,0 +1,12 @@
+# systemd user unit template for psu_service; deploy/install.sh --systemd
+# fills in @BIN@ and installs it to ~/.config/systemd/user/.
+[Unit]
+Description=Owon SPE6103 power supply service (serial port owner)
+
+[Service]
+ExecStart=@BIN@/psu_service --device /dev/ttyPowerSupply --bind 127.0.0.1 --port 8765
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

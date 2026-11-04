@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  dart:
+    name: Analyze and compile service + CLI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - run: dart pub get
+      - run: dart format --output=none --set-exit-if-changed packages
+      - run: dart analyze --fatal-infos packages
+      - run: dart compile exe packages/psu_service/bin/psu_service.dart -o build/psu_service
+      - run: dart compile exe packages/psu_cli/bin/psu_cli.dart -o build/psu
+      - run: build/psu --help
+
+  flutter:
+    name: Analyze and build UI (Linux)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: sudo apt-get update && sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev
+      - run: flutter pub get
+      - run: dart format --output=none --set-exit-if-changed apps
+      - run: flutter analyze --fatal-infos apps/psu_ui
+      - run: flutter build linux --release --no-tree-shake-icons
+        working-directory: apps/psu_ui

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=PSU Control
+Comment=Owon SPE6103 power supply control
+Exec=@BIN@/psu_ui
+Icon=psu-control
+Terminal=false
+Categories=Utility;Electronics;
+StartupWMClass=org.psu_control.ui

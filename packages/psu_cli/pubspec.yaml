@@ -1,0 +1,18 @@
+name: psu_cli
+description: Command-line client for the PSU service.
+version: 0.1.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+executables:
+  psu: psu_cli
+
+dependencies:
+  args: ^2.6.0
+  psu_protocol:
+
+dev_dependencies:
+  lints: ^6.0.0

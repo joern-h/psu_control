@@ -1,0 +1,14 @@
+name: psu_protocol
+description: Shared message types and WebSocket client for the PSU service.
+version: 0.1.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  web_socket_channel: ^3.0.0
+
+dev_dependencies:
+  lints: ^6.0.0

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- PSU Control app icon: bench supply with a lightning bolt -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3987e5"/>
+      <stop offset="1" stop-color="#1f5fb3"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="url(#bg)"/>
+  <!-- display window -->
+  <rect x="44" y="52" width="168" height="72" rx="12" fill="#0d1b2e" opacity="0.85"/>
+  <text x="128" y="104" font-family="DejaVu Sans, Liberation Sans, sans-serif" font-weight="bold" font-size="46" fill="#f0efec" text-anchor="middle" letter-spacing="2">12.0</text>
+  <!-- terminals -->
+  <circle cx="76" cy="178" r="20" fill="#eb6834"/>
+  <circle cx="76" cy="178" r="9" fill="#0d1b2e"/>
+  <circle cx="180" cy="178" r="20" fill="#0d1b2e"/>
+  <circle cx="180" cy="178" r="9" fill="#f0efec" opacity="0.9"/>
+  <!-- bolt -->
+  <path d="M140 136 L116 182 L132 182 L120 214 L150 166 L134 166 L146 136 Z" fill="#ffd166"/>
+</svg>

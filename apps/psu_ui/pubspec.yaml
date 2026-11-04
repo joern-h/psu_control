@@ -1,0 +1,22 @@
+name: psu_ui
+description: Flutter desktop UI for the Owon SPE6103 power supply.
+publish_to: none
+version: 0.1.0+1
+resolution: workspace
+
+environment:
+  sdk: ^3.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_chart: ^1.1.0
+  psu_protocol:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,5 @@
+# Example udev rule that creates /dev/ttyPowerSupply for the Owon SPE6103
+# (CH340 USB-serial, VID 1a86 / PID 7523). Add ATTRS{serial} if you have
+# several CH340 devices. The user running psu_service needs read/write access
+# (group "uucp" on Arch, "dialout" on Debian/Ubuntu).
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", SYMLINK+="ttyPowerSupply", MODE="0660", GROUP="uucp"
