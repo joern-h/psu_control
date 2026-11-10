@@ -20,6 +20,7 @@ jobs:
       - run: flutter pub get
       - run: dart format --output=none --set-exit-if-changed packages
       - run: dart analyze --fatal-infos packages
+      - run: mkdir -p build
       - run: dart compile exe packages/psu_service/bin/psu_service.dart -o build/psu_service
       - run: dart compile exe packages/psu_cli/bin/psu_cli.dart -o build/psu
       - run: build/psu --help
