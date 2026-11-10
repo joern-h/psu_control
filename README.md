@@ -1,5 +1,7 @@
 # psu_control
 
+[![CI](https://github.com/joern-h/psu_control/actions/workflows/ci.yml/badge.svg)](https://github.com/joern-h/psu_control/actions/workflows/ci.yml)
+
 Control suite for the **Owon SPE6103** bench power supply (60 V / 10 A), written
 in Dart and Flutter. The repository is a Dart workspace with three components and
 one shared library:

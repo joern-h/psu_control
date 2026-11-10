@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dart-lang/setup-dart@v1
+      # The workspace root includes the Flutter app, so resolving dependencies
+      # needs the Flutter SDK even for the pure Dart packages.
+      - uses: subosito/flutter-action@v2
         with:
-          sdk: stable
-      - run: dart pub get
+          channel: stable
+          cache: true
+      - run: flutter pub get
       - run: dart format --output=none --set-exit-if-changed packages
       - run: dart analyze --fatal-infos packages
       - run: dart compile exe packages/psu_service/bin/psu_service.dart -o build/psu_service
